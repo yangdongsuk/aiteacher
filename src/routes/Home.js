@@ -24,7 +24,7 @@ const Home = () => {
         <CardDemo />
         <CardDemo />
       </Flex>
-      <Button onClick={getanswer}>hello</Button>
+      <Button onClick={getanswer}>git?</Button>
     </>
   );
 };
