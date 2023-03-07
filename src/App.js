@@ -1,7 +1,8 @@
 import "./App.css";
-import { MantineProvider } from "@mantine/core";
+import { MantineProvider, AppShell, Header } from "@mantine/core";
 
 import AppRouter from "./components/Router";
+import MainHeader from "./components/Home/MainHeader";
 
 function App() {
   return (

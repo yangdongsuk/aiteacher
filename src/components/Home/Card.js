@@ -1,6 +1,12 @@
 import { Card, Image, Text, Badge, Button, Group } from "@mantine/core";
+import { useNavigate } from "react-router-dom";
 
 function CardDemo() {
+  const navigate = useNavigate();
+  function handleClick() {
+    navigate(`/question`);
+  }
+
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder>
       <Card.Section>
@@ -22,7 +28,14 @@ function CardDemo() {
         ai 한테 질문을 해보세요!
       </Text>
 
-      <Button variant="light" color="blue" fullWidth mt="md" radius="md">
+      <Button
+        onClick={handleClick}
+        variant="light"
+        color="blue"
+        fullWidth
+        mt="md"
+        radius="md"
+      >
         바로 질문하기
       </Button>
     </Card>

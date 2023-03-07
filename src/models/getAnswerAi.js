@@ -1,6 +1,6 @@
 import { Configuration, OpenAIApi } from "https://cdn.skypack.dev/openai";
 
-const fetchCompletion = async (content) => {
+const fetchCompletion = async (content, temperature) => {
   const testContent = "you are a cat";
   const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
@@ -17,7 +17,7 @@ const fetchCompletion = async (content) => {
         content: content,
       },
     ],
-    temperature: 0,
+    temperature: temperature,
   });
 
   // setCompletionText(completion.data.choices[0].message.content);

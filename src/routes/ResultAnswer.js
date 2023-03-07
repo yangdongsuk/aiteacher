@@ -9,6 +9,7 @@ import CardDemo from "../components/Home/Card";
 import WrongPointCard from "../components/Result/WrongPointCard";
 import HintCard from "../components/Result/HintCard";
 import { Badge } from "@mantine/core";
+import { IconTemperature } from "@tabler/icons-react";
 
 const ResultAnswer = () => {
   const location = useLocation();
@@ -22,8 +23,8 @@ const ResultAnswer = () => {
   const [relationConcept, setRelationConcept] = useState("");
   let resultOrder = orderGenerator(data);
 
-  const getResponse = async () => {
-    const res = await fetchCompletion(resultOrder);
+  const getResponse = async (temperature) => {
+    const res = await fetchCompletion(resultOrder, temperature);
     console.log(res);
 
     //res is json object so trsansform to object
@@ -35,9 +36,14 @@ const ResultAnswer = () => {
     setHint(resObj.hint);
     setRelationConcept(resObj.relationConcept);
   };
+  const newResponse = () => {
+    setWrongPoint("");
+    setHint("");
+    getResponse(1);
+  };
 
   useEffect(() => {
-    getResponse();
+    getResponse(0);
     console.log("unmounting...");
   }, []);
 
@@ -50,7 +56,7 @@ const ResultAnswer = () => {
       wrap="wrap"
     >
       <h1>Python AI Teacher</h1>
-      {completionText == "" ? (
+      {wrongPoint == "" ? (
         <>
           <h4>AI가 답변을 준비중입니다.</h4>
           <LoadingOverlay
@@ -62,19 +68,6 @@ const ResultAnswer = () => {
         </>
       ) : (
         <>
-          <Flex
-            gap="md"
-            justify="center"
-            // align="center"
-            direction="row"
-            wrap="wrap"
-          >
-            {/* <p>Wrong Point: {wrongPoint}</p>
-            <p>Hint: {hint}</p> */}
-            <WrongPointCard wrongPoint={wrongPoint} />
-            <HintCard hint={hint} />
-          </Flex>
-          {/* <p>Relation Concept: {relationConcept}</p> */}
           <Badge color="green" size="lg" radius="xs" variant="filled">
             관련된 개념
           </Badge>
@@ -93,7 +86,21 @@ const ResultAnswer = () => {
               })}
             </Flex>
           }
-          <Button onClick={getResponse}>다른 답변으로 말해줘</Button>
+          <Flex
+            gap="md"
+            justify="center"
+            // align="center"
+            direction="row"
+            wrap="wrap"
+          >
+            {/* <p>Wrong Point: {wrongPoint}</p>
+            <p>Hint: {hint}</p> */}
+            <WrongPointCard wrongPoint={wrongPoint} />
+            <HintCard hint={hint} />
+          </Flex>
+          {/* <p>Relation Concept: {relationConcept}</p> */}
+
+          <Button onClick={newResponse}>다른 답변으로 말해줘</Button>
         </>
       )}
     </Flex>
