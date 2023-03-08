@@ -54,11 +54,31 @@ const Login = () => {
         direction="row"
         wrap="wrap"
       >
-        this is login page
+        {" "}
+        <Flex
+          gap="md"
+          justify="center"
+          align="center"
+          direction="column"
+          wrap="wrap"
+        >
+          <h1>여기 까지 왔는데 로그인이나 한번 해보슈</h1>
+          <h1>너 밑에 버튼 솔직하게 누르고 싶잖아</h1>
+
+          <Button onClick={googleOnClick}>Continue with Google</Button>
+          <h1>사실 로그인 안했을때 페이지는 귀찮아서 아직 안 꾸몄어.</h1>
+          <h1>들어가면 좀 간지나는 화면 있으니까 그냥 로그인 ㄱㄱ</h1>
+          <h1>이렇게까지 부탁했는데도 안해? 진짜 독하다 독해~</h1>
+
+          <h1>이거 그냥 구글 계정으로 로그인 하는거라 1초도 안 걸림</h1>
+          <h1>1초 더 걸리면... 내가 너를 위해...</h1>
+          <h1>너를 위해... 너를 위해... 너를 위해...</h1>
+          <h4>걍 컴 문제니까 컴을 바꾸셈 ㅋ</h4>
+
+          <h1>이제 로그인 해야지</h1>
+        </Flex>
       </Flex>
-      <div>{displayName}</div>
-      <Button onClick={googleOnClick}>Continue with Google</Button>
-      <Button onClick={logout}>logout</Button>
+      {/* <Button onClick={logout}>logout</Button> */}
     </>
   );
 };
