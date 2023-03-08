@@ -5,12 +5,16 @@ import Testmodule from "../components/AiTeacher/test";
 import QuestionStepper from "../components/AiTeacher/QuestionStepper";
 import MainHeader from "../components/Home/MainHeader";
 import fetchCompletion from "../models/getAnswerAi";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../fbase";
 // 초기 화면
-const Home = () => {
+const Home = ({ isLoggedIn, userObj }) => {
+  const navigate = useNavigate();
   const getanswer = async () => {
     const res = await fetchCompletion("longtxt", 0.7);
     console.log(res);
   };
+
   return (
     <>
       <Flex
@@ -24,7 +28,8 @@ const Home = () => {
         <CardDemo />
         <CardDemo />
       </Flex>
-      <Button onClick={getanswer}>git?</Button>
+
+      {/* <Button onClick={getanswer}>git?</Button> */}
     </>
   );
 };

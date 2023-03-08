@@ -44,7 +44,7 @@ const ResultAnswer = () => {
 
   useEffect(() => {
     getResponse(0);
-    console.log("unmounting...");
+    console.log("get answer");
   }, []);
 
   return (
