@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 https://yangdongsuk.github.io/aiteacher
 <<<--- 직접 해보셈. 구글 로그인 필수임. 아직 문제들 안 넣어서 아무거나 선택해서 해보셈. 
 # Getting Started with Create React App
