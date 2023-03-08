@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import Home from "../routes/Home.js";
 import QuestionStepper from "./AiTeacher/QuestionStepper.js";
 import Testmodule from "./AiTeacher/test.js";
@@ -11,7 +16,7 @@ import Login from "../routes/Login.js";
 const AppRouter = ({ isLoggedIn, userObj }) => {
   return (
     <>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <AppShell
           header={<MainHeader isLoggedIn={isLoggedIn} userObj={userObj} />}
         >

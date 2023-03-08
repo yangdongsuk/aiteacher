@@ -22,7 +22,10 @@ Instructions on how to respond
 7. this is end of Instructions on how to respond. And I will give you the necessaryInformationData.
 `;
 const transtratrObj = {
+  "1번 실습 문제": questionNumber3,
+  "1번 과제 문제": questionNumber3,
   "2번 실습 문제": questionNumber3,
+  "2번 과제 문제": questionNumber3,
 };
 
 const orderGenerator = function (data) {
