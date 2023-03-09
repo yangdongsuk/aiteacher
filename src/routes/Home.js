@@ -29,7 +29,7 @@ const Home = ({ isLoggedIn, userObj }) => {
         <CardDemo />
       </Flex>
 
-      <Button onClick={getanswer}>git?</Button>
+      {/* <Button onClick={getanswer}>git?</Button> */}
     </>
   );
 };
