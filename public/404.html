@@ -9,7 +9,7 @@
     <script>
       const url = window.location.href.split("/");
       const basePath = url.slice(0, url.length - 1).join("/");
-      window.history.pushState({}, "", `${basePath}/index.html`);
+      window.history.pushState({}, "", `${basePath}`);
     </script>
   </body>
 </html>
