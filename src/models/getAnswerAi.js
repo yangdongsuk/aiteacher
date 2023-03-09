@@ -1,7 +1,21 @@
 import { Configuration, OpenAIApi } from "https://cdn.skypack.dev/openai";
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+  addDoc,
+} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
+import { db } from "../fbase";
+
+const getOpenaiApikey = async () => {
+  const snapshot = await getDocs(collection(db, "openaiapikey"));
+  const apikeys = snapshot.docs.map((doc) => doc.data().apikey);
+  return apikeys[0];
+};
 
 const fetchCompletion = async (content, temperature) => {
-  const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+  const apiKey = await getOpenaiApikey();
   // console.log(apiKey);
   const configuration = new Configuration({
     apiKey: apiKey,

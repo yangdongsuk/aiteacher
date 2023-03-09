@@ -6,7 +6,8 @@ import QuestionStepper from "../components/AiTeacher/QuestionStepper";
 import MainHeader from "../components/Home/MainHeader";
 import fetchCompletion from "../models/getAnswerAi";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../fbase";
+import { auth, db } from "../fbase";
+
 // 초기 화면
 const Home = ({ isLoggedIn, userObj }) => {
   const navigate = useNavigate();
