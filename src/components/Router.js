@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   useNavigate,
+  Navigate,
 } from "react-router-dom";
 import Home from "../routes/Home.js";
 import QuestionStepper from "./AiTeacher/QuestionStepper.js";
@@ -29,6 +30,7 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
               <Route path="/login" element={<Login />} />
               <Route path="/question" element={<QuestionStepper />} />
               <Route path="/result" element={<ResultAnswer />} />
+              <Route path="/*" element={<Navigate to="/"></Navigate>}></Route>
               <Route path="*" element={<div>여기 아니에요</div>} />
             </Routes>
           ) : (
