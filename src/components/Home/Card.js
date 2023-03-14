@@ -1,44 +1,49 @@
 import { Card, Image, Text, Badge, Button, Group } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 
-function CardDemo() {
+function HomeCard({ data }) {
   const navigate = useNavigate();
   function handleClick() {
-    navigate(`/question`);
+    navigate(`data.link`);
   }
 
   return (
-    <Card shadow="sm" padding="lg" radius="md" withBorder>
+    <Card
+      shadow="sm"
+      padding="lg"
+      radius="md"
+      w={250}
+      h={350}
+      style={{ display: "flex", flexDirection: "column" }}
+      withBorder
+    >
       <Card.Section>
-        <Image
-          src="https://codegeeks.solutions/wp-content/uploads/2023/01/960x0.jpeg"
-          height={160}
-          alt="Norway"
-        />
+        <Image src={data.img} height={160} alt="Norway" />
       </Card.Section>
 
       <Group position="apart" mt="md" mb="xs">
-        <Text weight={500}>AI Teacher</Text>
-        <Badge color="pink" variant="light">
-          beta{" "}
+        <Text weight={500}>{data.title}</Text>
+        <Badge color={data.badgeColor} variant="light">
+          {data.badgeContent}
         </Badge>
       </Group>
 
       <Text size="sm" color="dimmed">
-        ai 한테 질문을 해보세요!
+        {data.description}
       </Text>
 
       <Button
         onClick={handleClick}
+        disabled={data.buttonDisabled}
         variant="light"
         color="blue"
         fullWidth
-        mt="md"
         radius="md"
+        style={{ marginTop: "auto" }}
       >
-        바로 질문하기
+        {data.buttonContent}
       </Button>
     </Card>
   );
 }
-export default CardDemo;
+export default HomeCard;
