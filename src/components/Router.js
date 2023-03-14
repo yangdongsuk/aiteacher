@@ -35,7 +35,7 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
             </Routes>
           ) : (
             <Routes>
-              <Route path="*" element={<Login />} />
+              <Route path="*" element={<Home isLoggedIn={isLoggedIn} />} />
             </Routes>
           )}
         </AppShell>

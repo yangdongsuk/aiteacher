@@ -1,10 +1,11 @@
 import { Card, Image, Text, Badge, Button, Group } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 
-function HomeCard({ data }) {
+function HomeCard({ data, isLoggedIn }) {
   const navigate = useNavigate();
   function handleClick() {
-    navigate(`data.link`);
+    if (!isLoggedIn) alert("로그인이 필요합니다.");
+    else navigate(data.link);
   }
 
   return (

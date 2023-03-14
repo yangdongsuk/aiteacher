@@ -58,7 +58,7 @@ const Home = ({ isLoggedIn, userObj }) => {
         wrap="wrap"
       >
         {homeCardInfo.map((data, i) => (
-          <HomeCard key={i} data={data} />
+          <HomeCard key={i} data={data} isLoggedIn={isLoggedIn} />
         ))}
       </Flex>
 
