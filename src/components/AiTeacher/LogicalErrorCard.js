@@ -10,17 +10,25 @@ function LogicalErrorCard({ typeValue, setTypeValue }) {
       shadow="sm"
       padding="lg"
       radius="md"
+      w={300}
+      h={350}
       withBorder
       opacity={typeValue == "syntaxerror" ? 0.5 : 1}
       style={
         typeValue == "logicalerror"
-          ? { borderWidth: "1px", borderStyle: "solid", borderColor: "red" }
-          : null
+          ? {
+              borderWidth: "1px",
+              borderStyle: "solid",
+              borderColor: "red",
+              display: "flex",
+              flexDirection: "column",
+            }
+          : { display: "flex", flexDirection: "column" }
       }
     >
       <Card.Section>
         <Image
-          src="https://global.discourse-cdn.com/codecademy/original/5X/7/2/1/c/721c4df8b38b74c8922908398e65f7eb5eafaa90.png"
+          src="https://cdn.straightnews.co.kr/news/photo/201901/40568_17290_2144.jpg"
           height={160}
           alt="Norway"
         />
@@ -44,6 +52,7 @@ function LogicalErrorCard({ typeValue, setTypeValue }) {
         fullWidth
         mt="md"
         radius="md"
+        style={{ marginTop: "auto" }}
       >
         선택하기
       </Button>

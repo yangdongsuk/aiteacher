@@ -10,13 +10,21 @@ function SyntaxErrorCard({ typeValue, setTypeValue }) {
       shadow="sm"
       padding="lg"
       radius="md"
+      w={300}
+      h={350}
       withBorder
       //   style={{ backgroundColor: "#E5EDFA" }}
       opacity={typeValue == "logicalerror" ? 0.5 : 1}
       style={
         typeValue == "syntaxerror"
-          ? { borderWidth: "1px", borderStyle: "solid", borderColor: "red" }
-          : null
+          ? {
+              borderWidth: "1px",
+              borderStyle: "solid",
+              borderColor: "red",
+              display: "flex",
+              flexDirection: "column",
+            }
+          : { display: "flex", flexDirection: "column" }
       }
     >
       <Card.Section>
@@ -45,6 +53,7 @@ function SyntaxErrorCard({ typeValue, setTypeValue }) {
         fullWidth
         mt="md"
         radius="md"
+        style={{ marginTop: "auto" }}
       >
         선택하기
       </Button>
