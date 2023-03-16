@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import { Stepper, Button, Group, Flex } from "@mantine/core";
-import QuestionSelecter from "./QuestionSelecter";
+import QuestionSelecter from "./First step/QuestionSelecter.js";
 import TypeSelecter from "./TypeSelecter";
-import ProblemInput from "./ProblemInput";
+import ProblemInput from "./Final step/ProblemInput";
 
 function QuestionStepper() {
   let navigate = useNavigate();

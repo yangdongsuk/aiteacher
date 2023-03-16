@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Overlay, Grid, Flex, Button } from "@mantine/core";
 import CardDemo from "../Home/Card";
-import SyntaxErrorCard from "./SyntaxErrorCard";
-import LogicalErrorCard from "./LogicalErrorCard";
+import SyntaxErrorCard from "./Second step/SyntaxErrorCard";
+import LogicalErrorCard from "./Second step/LogicalErrorCard";
 
 function TypeSelector({ typeValue, setTypeValue }) {
   return (
