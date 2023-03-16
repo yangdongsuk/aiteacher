@@ -1,9 +1,9 @@
 import { Card, Image, Text, Badge, Button, Group } from "@mantine/core";
 
-function LogicalErrorCard({ typeValue, setTypeValue }) {
+function ErrorCard({ data }) {
   function handleClick() {
-    setTypeValue("logicalerror");
-    console.log(typeValue);
+    data.setTypeValue(data.errorType);
+    console.log(data.typeValue);
   }
   return (
     <Card
@@ -13,9 +13,11 @@ function LogicalErrorCard({ typeValue, setTypeValue }) {
       w={300}
       h={350}
       withBorder
-      opacity={typeValue == "syntaxerror" ? 0.5 : 1}
+      opacity={
+        data.typeValue == data.errorType || data.typeValue == "" ? 1 : 0.5
+      }
       style={
-        typeValue == "logicalerror"
+        data.typeValue == data.errorType
           ? {
               borderWidth: "1px",
               borderStyle: "solid",
@@ -27,28 +29,24 @@ function LogicalErrorCard({ typeValue, setTypeValue }) {
       }
     >
       <Card.Section>
-        <Image
-          src="https://cdn.straightnews.co.kr/news/photo/201901/40568_17290_2144.jpg"
-          height={160}
-          alt="Norway"
-        />
+        <Image src={data.img} height={160} alt="Norway" />
       </Card.Section>
 
       <Group position="apart" mt="md" mb="xs">
-        <Text weight={500}>논리 오류</Text>
+        <Text weight={500}>{data.title}</Text>
         <Badge color="pink" variant="light">
-          BETA
+          {data.badge}
         </Badge>
       </Group>
 
       <Text size="sm" color="dimmed">
-        작동은 잘 되는데 결과가 원하는대로 안나와요 ㅠㅠ
+        {data.context}
       </Text>
 
       <Button
         onClick={handleClick}
         variant="light"
-        color={typeValue == "logicalerror" ? "red" : "blue"}
+        color={data.typeValue == data.errorType ? "red" : "blue"}
         fullWidth
         mt="md"
         radius="md"
@@ -59,4 +57,4 @@ function LogicalErrorCard({ typeValue, setTypeValue }) {
     </Card>
   );
 }
-export default LogicalErrorCard;
+export default ErrorCard;
