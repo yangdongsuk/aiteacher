@@ -1,3 +1,5 @@
+![화면 기록 2023-03-28 오전 10 26 50 (online-video-cutter com)](https://user-images.githubusercontent.com/51476641/228104111-d860c436-5ef5-4af9-9237-84b26f9b002b.gif)
+
 내 api key 훔쳐 쓰면 지구 끝까지 쫓아감.\
 https://yangdongsuk.github.io/aiteacher
 <<<--- 직접 해보셈. 
