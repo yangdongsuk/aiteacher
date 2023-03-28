@@ -16,7 +16,10 @@ function App() {
         setIsLoggedIn(true);
         setUserObj(user);
       } else {
-        setIsLoggedIn(false);
+        // setIsLoggedIn(false);
+        //임시로 로그인 안해도 guest로 자동 로그인되도록 설정
+        setIsLoggedIn(true);
+        setUserObj({ displayName: "guest" });
       }
       setInit(true);
     });
